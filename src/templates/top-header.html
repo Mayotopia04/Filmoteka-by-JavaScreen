@@ -1,0 +1,21 @@
+<div class="col">
+    <ul>
+        {{#ifEquals active "home"}}
+        <li><strong>Home</strong></li>
+        {{else}}
+        <li><a href="#" class="top-nav-link" data-content="home">HOME</a></li>
+        {{/ifEquals}}
+        <li>
+            <span>Search</span> <input type="text" name="search" /> <button>Submit</button>
+
+        </li>
+        {{#ifEquals active "library"}}
+        <li><strong>LIBRARY</strong></li>
+        {{else}}
+        <li><a href="#" class="top-nav-link" data-content="library">LIBRARY</a></li>
+        {{/ifEquals}}
+    </ul>
+</div>
+<style type="text/css">
+
+</style>

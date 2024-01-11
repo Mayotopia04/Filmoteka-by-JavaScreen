@@ -1,20 +1,231 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filmoteka by JavaScreen</title>
-    <link rel="icon" type="images/icon" href="./images/film.png"/>
-    <link rel="stylesheet" href="./sass/index.scss" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!--fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/css">
+      a.orange-underline {
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 4px solid #ff6b08;
+      }
+
+      a:hover.hovermouse {
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 4px solid #ff6b08;
+        direction: ltr;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-bg {
+        background: url(images/header-bg-d.png),
+          lightgray 0px 0.655px / 100% 292.273% no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: cover;
+      }
+
+      .custom-container {
+        max-width: 882px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .poster-border {
+        border-radius: 5px;
+      }
+
+      .movie-card-title {
+        color: #000;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px; /* 133.333% */
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+      }
+
+      .movie-card-details {
+        color: #ff6b08;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .movie-details-list {
+        list-style-type: none;
+      }
+
+      .details-list-flex {
+        display: flex;
+      }
+
+      .movie-details-title {
+        color: #000;
+        font-family: Roboto;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .movie-details-property {
+        color: #8c8c8c;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .movie-details-value {
+        color: #000;
+        text-align: left;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .vote-slash {
+        color: #8c8c8c;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+      }
+
+      .vote-average {
+        border-radius: 5px;
+        background: #ff6b01;
+        width: 36px;
+        height: 16px;
+        flex-shrink: 0;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        color: white;
+        padding: 1 10;
+      }
+
+      .vote-count {
+        width: 36px;
+        height: 16px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        background: #f7f7f7;
+        padding: 1 4;
+      }
+
+      .movie-details-about {
+        color: #000;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px; /* 133.333% */
+        text-transform: uppercase;
+      }
+
+      .movie-details-overview {
+        width: 396px;
+        height: 160px;
+        flex-shrink: 0;
+        color: #000;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 166.667% */
+      }
+
+      .movie-details-buttons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .add-watched-button {
+        color: #fff;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px; /* 133.333% */
+        text-transform: uppercase;
+        border-radius: 5px;
+        border-color: #ff6b01;
+        background: #ff6b01;
+        width: 136px;
+        height: 44px;
+        flex-shrink: 0;
+        box-shadow: none;
+        /* padding: 14px 8px 12px 8px; */
+      }
+      .add-queue-button {
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px; /* 133.333% */
+        text-transform: uppercase;
+        flex-shrink: 0;
+        width: 136px;
+        border-radius: 5px;
+        background: none;
+        box-shadow: none;
+      }
+
+      .movie-details-flex {
+        display: flex;
+      }
+
+      .modal-size {
+        /* width: 882px; */
+        border-radius: 0;
+      }
+
+      .no-display {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/header-mayo.html"></include>
-    <!-- <include src="./images/icons.svg"></include> -->
-    <script type="module" src="./index.js"></script>
+    <include src="./partials/index-dane.html"></include>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="index.js" type="module"></script>
   </body>
 </html>
