@@ -1,0 +1,46 @@
+<header class="header">
+<style type="text/css">
+a.orange-underline {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 4px solid  #FF6B08;
+}
+
+a:hover.hovermouse {
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: 4px solid #FF6B08;
+    text-decoration-style: solid;
+    direction: ltr;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+</style>
+<div class="container header-container">
+    
+    <div class="nav-container">
+        <a href="./index.html" class="film-nav link">
+            <span class="film-logo"><img src="./images/film.png" width="24" height="24" alt="film icon"></span>
+            <span class="logo-name link animate__animated animate__bounceIn">Filmoteka</span>
+        </a>
+        
+        <nav class="nav-list">
+            <ul class="list link header-list">
+                <li><a href="./index.html" class="link-list active-link current link orange-underline">Home</a></li>
+
+                <li><a href="./index.html" class="link-list link hovermouse">My Library</a></li>
+            </ul>
+        </nav>
+    </div>
+
+        
+    <div class="search-container">
+        <form action="" class="search-form" id="search-form">
+            <input 
+            type="text" class="search-input" name="searchQuery" autocomplete="off" 
+            placeholder="Search for movies"/>
+            <button class="clapper-btn" type="submit" title="Search">🎬</button>
+        </form>
+    </div>
+</div>
+</header>
