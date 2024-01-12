@@ -1,11 +1,11 @@
-import templateProcessor from "./templateProcessor";
-import { GENRES } from "./config";
+import templateProcessor from './templateProcessor';
+import { GENRES } from './config';
 
 class RenderMovieCard {
   render(options) {
-    console.log("start movie card rendering");
-    let genres = options.genre_ids.map((g) => GENRES[g]);
-    let genreNames = genres.join(", ");
+    console.log('start movie card rendering');
+    let genres = options.genre_ids.map(g => GENRES[g]);
+    let genreNames = genres.join(', ');
     const templateHtml = `<div
   class="col-lg-4 col-md-6 col-sm-12 movie-card"
   data-movie-id="{{id}}"
@@ -14,15 +14,14 @@ class RenderMovieCard {
 >
   <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border" width="274px"/>
   <h3 class="movie-card-title">{{original_title}}</h3>
-  <p><span class="movie-card-details">{{genre_names}} | {{release_year}}</span> <span class="vote-average">{{vote_average}}</span></p>
+  <p><span class="movie-card-details">{{genre_names}} | {{release_year}} </span> <span class="vote-average"> {{vote_average}}</span></p>
 </div>
 `;
-    
 
     options.genre_names = genreNames;
 
     const releaseDate = options.release_date;
-    const releaseYear = releaseDate.split("-")[0];
+    const releaseYear = releaseDate.split('-')[0];
     console.log(releaseYear);
     options.release_year = releaseYear;
 
