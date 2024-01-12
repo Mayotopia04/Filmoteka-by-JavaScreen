@@ -1,6 +1,3 @@
-import { startPage } from './start-page';
-import { gallery, inputRef } from './refs';
-import { movieSearcher } from './search';
 
 const btn1Ref = document.querySelector('[data-index="1"]');
 const btn2Ref = document.querySelector('[data-index="2"]');
