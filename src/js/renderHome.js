@@ -1,6 +1,7 @@
 
 import MovieDbApi from './api';
 
+import renderMovieCard from './renderMovieCard';
 
 class RenderHome {
 
@@ -14,7 +15,8 @@ class RenderHome {
         let count = 0;
         movies.data.results.forEach((movie) => {
             // const movieHtml=  RenderMovieCard.render(movie);
-            trendingMoviesHtml = trendingMoviesHtml + '<div>' + count + '</div>';
+            
+            trendingMoviesHtml = trendingMoviesHtml + renderMovieCard.render(movie);
             count++;
         });
         document.getElementById('content').innerHTML = trendingMoviesHtml;

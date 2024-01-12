@@ -1,15 +1,16 @@
-import RenderHome from "./js/renderHome";
+import renderHome from "./js/renderHome";
 //  Import config
 import {CONTENT_KEYS} from "./js/config";
+import templateProcessor from "./js/templateProcessor";
 
 //  Instantiate global variables here
 let currentContent =  CONTENT_KEYS.home;
 
 window.onload = async function () {
   await renderComponents();
-  // renderComponents().then(() => {
+  
   setupEventListeners();
-  // });
+  
 }
 
 
@@ -17,7 +18,7 @@ window.onload = async function () {
 //  Header, Content, Footer
 async function renderComponents() {
 
-  await RenderHome.render({});
+  await renderHome.render({});
 
 }
 
