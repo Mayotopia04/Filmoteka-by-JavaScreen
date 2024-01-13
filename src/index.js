@@ -18,7 +18,7 @@ window.onload = async function () {
 //  Header, Content, Footer
 async function renderComponents() {
 
-  await renderHome.render({});
+  await renderHome.render({page: 1});
 
 }
 

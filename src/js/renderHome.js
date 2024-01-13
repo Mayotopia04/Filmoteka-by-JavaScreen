@@ -8,7 +8,7 @@ class RenderHome {
     async render(options) {
         console.log('start home rendering');
         //  Call API to get trending movies
-        const movies = await MovieDbApi.getTrendingMovies('day', 1);
+        const movies = await MovieDbApi.getTrendingMovies('day', options.page);
         let trendingMoviesHtml = '';
         //  movies.data.results
         //  Iterate through each movie results
