@@ -28,7 +28,6 @@
       <header id="top-header">
         <include src="./partials/header-mayo.html"></include>
       </header>
-
       <div class="container movie-cards-container">
         <main id="content" class="row">
           <!--        Main content goes here-->
@@ -41,10 +40,22 @@
         <!--        Footer elements here-->
       </footer>
     </div>
+    <!-- temporary modal button -->
+    <button type="button" data-modal-open>temporary modal button</button>
+    <!-- movie modal -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close" data-modal-close>
+          <svg class="modal-close-icon" width="16" height="16">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <script src="./index.js" type="module"></script>
     <script src="./js/search.js" type="module"></script>
+    <script src="./js/movieModal.js" type="module"></script>
     <script src="./js/pagination1.js" type="module"></script>
-
   </body>
 </html>

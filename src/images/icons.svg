@@ -1,0 +1,10 @@
+<svg aria-hidden="true" style="position:absolute;width:0;height:0" xmlns="http://www.w3.org/2000/svg" overflow="hidden" fill="none">
+<defs>
+
+<!-- close modal button -->
+<symbol id="icon-close" viewBox="0 0 16 16">
+  <path d="M1 15L15 1" stroke="black" stroke-width="2"/>
+</symbol>
+
+</defs>
+</svg>

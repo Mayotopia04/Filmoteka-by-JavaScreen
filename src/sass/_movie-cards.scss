@@ -39,28 +39,32 @@
   border-radius: 5px;
 }
 
-// .movie-cards-container {
-//   max-width: 882px;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
+.img-width {
+  width: 280px;
 
-// @media screen and (max-width: 768px) {
-//   .movie-cards-container {
-//     max-width: 618px;
-//   }
-// }
+  @media screen and (min-width: 768px) {
+    width: 294px;
+  }
+
+  @media screen and (min-width: 990px) {
+    width: 274px;
+  }
+}
 
 .movie-cards-container {
   max-width: 280px;
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (min-width: 480px) {
-    max-width: 618px;
+  @media screen and (min-width: 428px) {
+    max-width: 398px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 728px;
   }
 
   @media screen and (min-width: 990px) {
-    max-width: 882px;
+    max-width: 988px;
   }
 }
