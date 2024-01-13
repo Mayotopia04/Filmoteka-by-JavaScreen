@@ -3,7 +3,7 @@ import { GENRES } from './config';
 
 class RenderMovieCard {
   render(options) {
-    console.log('start movie card rendering');
+    
     let genres = options.genre_ids.map(g => GENRES[g]);
     let genreNames = genres.join(', ');
     const templateHtml = `<div
@@ -22,7 +22,7 @@ class RenderMovieCard {
 
     const releaseDate = options.release_date;
     const releaseYear = releaseDate.split('-')[0];
-    console.log(releaseYear);
+    
     options.release_year = releaseYear;
 
     return templateProcessor.replaceValues(templateHtml, options);
