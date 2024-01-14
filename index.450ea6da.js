@@ -4,7 +4,7 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
   data-bs-toggle="modal"
   data-bs-target="#movie-details-modal"
 >
-  <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border" width="274px"/>
+  <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="poster-border img-width"/>
   <h3 class="movie-card-title">{{original_title}}</h3>
   <p><span class="movie-card-details">{{genre_names}} | {{release_year}} </span> <span class="vote-average"> {{vote_average}}</span></p>
 </div>
@@ -51,4 +51,4 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
     
 </div>
 `;document.getElementById("movie-details-content").innerHTML=(0,n.default).replaceValues(e,t)}}});var a=i("d5Usq"),s=i("7rYDH"),u=i("kwJfa");i("hsqK0");var f=i("kDUSD");async function l(){await (0,a.default).render({page:1})}u.CONTENT_KEYS.home,window.onload=async function(){await l(),function(){for(let t of document.getElementsByClassName("top-nav-link"))t.onclick=async function(t){let e=t.currentTarget.getAttribute("data-content");alert(e)}}(),function(){for(let t of document.getElementsByClassName("movie-card"))t.onclick=async function(t){let e=t.currentTarget.getAttribute("data-movie-id"),r=await (0,s.default).getMovieDetails(e);(0,f.default).render(r.data)}}()};
-//# sourceMappingURL=index.23f1ba0d.js.map
+//# sourceMappingURL=index.450ea6da.js.map
