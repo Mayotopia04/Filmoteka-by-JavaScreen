@@ -1,8 +1,8 @@
-import templateProcessor from "./templateProcessor";
+import templateProcessor from './templateProcessor';
 class RenderMovieDetails {
-    render(options) {
-    console.log("start movie details rendering");
-    const templateHtml = `<div class="modal-content modal-size p-3">
+  render(options) {
+    console.log('start movie details rendering');
+    const templateHtml = `<div class="modal-content modal-shape p-3">
     <div class="text-end"><button
         type="button"
         class="btn-close"
@@ -27,9 +27,7 @@ class RenderMovieDetails {
          <li class="movie-details-value"><span class="vote-average">{{vote_average}}</span> <span class="vote-slash">/</span> <span class="movie-details-value vote-count">{{vote_count}}</span></li>
          <li class="movie-details-value"><span class="movie-details-value">{{popularity}}</span></li>
          <li class="movie-details-value"><span class="movie-details-value">{{original_title}}</span></li>
-         <li class="movie-details-value"><span class="movie-details-value">{{#each genres}}
-  {{ name }}{{#unless @last}}, {{/unless}}
-{{/each}}</span></li>
+         <li class="movie-details-value"><span class="movie-details-value">{{genre_names}}</span></li>
         </ul>
         </div>
         <div>
@@ -45,9 +43,9 @@ class RenderMovieDetails {
     
 </div>
 `;
-    
-    document.getElementById("movie-details-content").innerHTML =
-        templateProcessor.replaceValues(templateHtml, options);
-    }
+
+    document.getElementById('movie-details-content').innerHTML =
+      templateProcessor.replaceValues(templateHtml, options);
+  }
 }
 export default new RenderMovieDetails();
