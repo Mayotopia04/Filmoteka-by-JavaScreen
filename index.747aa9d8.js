@@ -16,9 +16,9 @@
         aria-label="Close"
       ></button></div>
 
-      <div class="row">
+      <div class="row details-wrap">
       <div class="col-md-5">
-            <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border"/>
+            <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border poster-width"/>
       </div>
       <div class= "col">
        <h2 class="movie-details-title">{{original_title}}</h2>
@@ -37,16 +37,16 @@
         </ul>
         </div>
         <div>
-        <h3 class="movie-details-about">ABOUT</h3>
-        <p class="movie-details-overview">{{overview}}</p>
-       </div>
-       <div class="movie-details-buttons">
-        <button type="button" class="add-watched-button">ADD TO WATCHED</button>
-        <button type="button" class="add-queue-button">ADD TO QUEUE</button>
-       </div>
+         <h3 class="movie-details-about">ABOUT</h3>
+         <p class="movie-details-overview">{{overview}}</p>
+        </div>
+        <div class="movie-details-buttons">
+         <button type="button" class="add-watched-button">ADD TO WATCHED</button>
+         <button type="button" class="add-queue-button">ADD TO QUEUE</button>
+        </div>
       </div>
       </div>
     
 </div>
 `;document.getElementById("movie-details-content").innerHTML=(0,n.default).replaceValues(e,t)}}});var a=i("d6pHd"),s=i("b7ONl"),u=i("ebqVR");i("43ouc");var f=i("eWHaw");async function l(){await (0,a.default).render({page:1})}u.CONTENT_KEYS.home,window.onload=async function(){await l(),function(){for(let t of document.getElementsByClassName("top-nav-link"))t.onclick=async function(t){let e=t.currentTarget.getAttribute("data-content");alert(e)}}(),function(){for(let t of document.getElementsByClassName("movie-card"))t.onclick=async function(t){let e=t.currentTarget.getAttribute("data-movie-id"),r=await (0,s.default).getMovieDetails(e);(0,f.default).render(r.data)}}()}}();
-//# sourceMappingURL=index.308438bc.js.map
+//# sourceMappingURL=index.747aa9d8.js.map
