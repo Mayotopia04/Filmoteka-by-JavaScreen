@@ -168,7 +168,7 @@
 .modal-shape {
   border-radius: 0;
   width: 280px;
-  min-height: 958px;
+  min-height: 800px;
   margin: 30px;
 
   @media screen and (min-width: 428px) {
@@ -177,12 +177,12 @@
 
   @media screen and (min-width: 768px) {
     min-width: 618px;
-    min-height: 600px;
+    min-height: 500px;
   }
 
   @media screen and (min-width: 990px) {
     min-width: 882px;
-    min-height: 600px;
+    min-height: 500px;
   }
 }
 
