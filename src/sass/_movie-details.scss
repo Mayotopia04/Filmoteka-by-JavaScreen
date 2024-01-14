@@ -98,8 +98,15 @@
   height: 44px;
   flex-shrink: 0;
   box-shadow: none;
+  cursor: pointer;
   /* padding: 14px 8px 12px 8px; */
 }
+
+.add-watched-button:hover {
+  background-color: #ff842b;
+  border-color: #ff842b;
+}
+
 .add-queue-button {
   color: #000;
   text-align: center;
@@ -114,6 +121,11 @@
   border-radius: 5px;
   background: none;
   box-shadow: none;
+  cursor: pointer;
+}
+
+.add-queue-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .modal-shape {
