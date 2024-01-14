@@ -10,9 +10,9 @@ class RenderMovieDetails {
         aria-label="Close"
       ></button></div>
 
-      <div class="row">
+      <div class="row details-wrap">
       <div class="col-md-5">
-            <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border"/>
+            <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border poster-width"/>
       </div>
       <div class= "col">
        <h2 class="movie-details-title">{{original_title}}</h2>
@@ -31,13 +31,13 @@ class RenderMovieDetails {
         </ul>
         </div>
         <div>
-        <h3 class="movie-details-about">ABOUT</h3>
-        <p class="movie-details-overview">{{overview}}</p>
-       </div>
-       <div class="movie-details-buttons">
-        <button type="button" class="add-watched-button">ADD TO WATCHED</button>
-        <button type="button" class="add-queue-button">ADD TO QUEUE</button>
-       </div>
+         <h3 class="movie-details-about">ABOUT</h3>
+         <p class="movie-details-overview">{{overview}}</p>
+        </div>
+        <div class="movie-details-buttons">
+         <button type="button" class="add-watched-button">ADD TO WATCHED</button>
+         <button type="button" class="add-queue-button">ADD TO QUEUE</button>
+        </div>
       </div>
       </div>
     
