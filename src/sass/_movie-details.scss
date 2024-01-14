@@ -1,0 +1,133 @@
+.movie-details-list {
+  list-style-type: none;
+}
+
+.details-list-flex {
+  display: flex;
+}
+
+.movie-details-title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.movie-details-property {
+  color: #8c8c8c;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.movie-details-value {
+  color: #000;
+  text-align: left;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.vote-slash {
+  color: #8c8c8c;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.vote-count {
+  width: 36px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #f7f7f7;
+  padding: 1 4;
+}
+
+.movie-details-about {
+  color: #000;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  text-transform: uppercase;
+}
+
+.movie-details-overview {
+  width: 396px;
+  height: 160px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+}
+
+.movie-details-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.add-watched-button {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  text-transform: uppercase;
+  border-radius: 5px;
+  border-color: #ff6b01;
+  background: #ff6b01;
+  width: 136px;
+  height: 44px;
+  flex-shrink: 0;
+  box-shadow: none;
+  /* padding: 14px 8px 12px 8px; */
+}
+.add-queue-button {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  text-transform: uppercase;
+  flex-shrink: 0;
+  width: 136px;
+  border-radius: 5px;
+  background: none;
+  box-shadow: none;
+}
+
+.modal-shape {
+  border-radius: 0;
+  min-width: 280px;
+  min-height: 958px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 618px;
+    min-height: 562px;
+  }
+
+  @media screen and (min-width: 990px) {
+    min-width: 882px;
+    min-height: 568px;
+  }
+}
