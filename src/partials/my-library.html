@@ -5,17 +5,22 @@
 
 <style type="text/css">
   .my-library-header {
-    background: url(../images/mylibraryheader-bg-d.png),
+    background: url(./images/mylibraryheader-bg-d.png),
       lightgray 0px 0.655px / 100% 292.273% no-repeat;
     background-position: center;
     background-size: cover;
     height: 230px;
   }
 
+  .selected-button {
+    background-color: #ff6b01 !important;
+    border-color: #ff6b01 !important;
+  }
+
   .watched-button {
     border-radius: 5px;
-    background-color: #ff6b01;
-    border-color: #ff6b01;
+    /* background-color: #ff6b01;
+    border-color: #ff6b01; */
     width: 136px;
     height: 44px;
     flex-shrink: 0;
@@ -35,7 +40,7 @@
     background-color: #faa364;
   }
 
-  .queue-button {
+  .library-button {
     border-radius: 5px;
     border: 1px solid #fff;
     width: 136px;
@@ -53,9 +58,7 @@
     cursor: pointer;
   }
 
-  .queue-button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+
 
   .button-flex {
     display: flex;
@@ -133,19 +136,19 @@
   <div class="header-wrap">
     <div class="logo">
       <svg class="socmed-icon" width="24" height="24">
-        <use href="../images/icons.svg#logo-icon"></use>
+        <use href="./images/icons.svg#logo-icon"></use>
       </svg>
       <h1 class="logo-font">Filmoteka</h1>
     </div>
     <div>
       <ul class="list">
-        <li><a href="../index.html" class="link-font">HOME</a></li>
+        <li><a href="./index.html" class="link-font">HOME</a></li>
         <li>MY LIBRARY</li>
       </ul>
     </div>
   </div>
   <div class="button-flex">
-    <button type="button" class="watched-button">WATCHED</button
-    ><button type="button" class="queue-button">QUEUE</button>
+    <button type="button" id="watched-library-btn" class="library-button selected-button">WATCHED</button
+    ><button type="button" id="qd-library-btn" class="library-button">QUEUE</button>
   </div>
 </header>

@@ -35,8 +35,8 @@ class RenderMovieDetails {
          <p class="movie-details-overview">{{overview}}</p>
         </div>
         <div class="movie-details-buttons">
-         <button type="button" class="add-watched-button">ADD TO WATCHED</button>
-         <button type="button" class="add-queue-button">ADD TO QUEUE</button>
+         <button type="button" data-bs-dismiss="modal" id="add-to-watched-btn" class="add-watched-button">ADD TO WATCHED</button>
+         <button type="button" data-bs-dismiss="modal" id="add-to-q-btn" class="add-queue-button">ADD TO QUEUE</button>
         </div>
       </div>
       </div>
