@@ -15,6 +15,19 @@
     width: 100%;
   }
 
+  li.orange-underline {
+    border-bottom: 4px solid #ff6b08;
+  }
+
+  a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 4px solid #ff6b08;
+    text-decoration-style: solid;
+    direction: ltr;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .selected-button {
     background-color: #ff6b01 !important;
     border-color: #ff6b01 !important;
@@ -142,7 +155,7 @@
     <div>
       <ul class="list">
         <li><a href="./index.html" class="link-font">HOME</a></li>
-        <li>MY LIBRARY</li>
+        <li class="orange-underline">MY LIBRARY</li>
       </ul>
     </div>
   </div>
