@@ -2,18 +2,18 @@ import renderHome from "./js/renderHome";
 import MovieDbApi from './js/api';
 //  Import config
 import {CONTENT_KEYS} from "./js/config";
-import templateProcessor from "./js/templateProcessor";
 import renderMovieDetails from "./js/renderMovieDetails";
 import renderLibrary from "./js/renderLibrary";
+import renderPagination from './js/renderPagination';
 
 //  Instantiate global variables here
 let currentContent =  CONTENT_KEYS.home;
 
 window.onload = async function () {
   await renderComponents();
-  
+
   setupEventListeners();
-  
+
 }
 
 
@@ -23,17 +23,18 @@ async function renderComponents() {
 
   const path = window.location.pathname;
   const page = path.split("/").pop();
-  console.log( page );
 
-  if (page === 'index.html') {
-    // displays trending movies
-    await renderHome.render({page: 1});
-  } else {
+  if (page === 'library.html') {
+    //  Library
+    //  No pagination
     await renderLibrary.render('watchedMovies');
-
+  } else {
+    //  Home
+    //  Displays trending movies
+    //  Render pagination also
+    await renderHome.render({page: 1});
+    renderPagination.render(1);
   }
-
-  
 
 }
 
@@ -44,7 +45,6 @@ async function renderComponents() {
 //  Setup event listeners
 //  Create a function for each type
 function setupEventListeners() {
-  setupNavLinks();
 
   setupMovieCardOnClick();
 
@@ -65,8 +65,8 @@ function setupMovieCardOnClick() {
       let addToWatchedBtn = document.getElementById('add-to-watched-btn');
       let addToQueueBtn = document.getElementById('add-to-q-btn');
       addToWatchedBtn.onclick = function (e) {
-        
-        // get item if it exists in localStorage 
+
+        // get item if it exists in localStorage
         let watchedMoviesText = localStorage.getItem("watchedMovies");
         let watchedMovies = [];
         if (watchedMoviesText) {
@@ -90,9 +90,9 @@ function setupMovieCardOnClick() {
       }
 
 
-      
+
       addToQueueBtn.onclick = function (e) {
-        
+
         let queuedMoviesText = localStorage.getItem("queuedMovies");
         let queuedMovies = [];
         if (queuedMoviesText) {
@@ -116,15 +116,6 @@ function setupMovieCardOnClick() {
   }
 }
 
-function setupNavLinks() {
-  const navLinks = document.getElementsByClassName('top-nav-link');
-  for(const navLink of navLinks) {
-    navLink.onclick = async function (ev) {
-      const dataContent = ev.currentTarget.getAttribute('data-content');
-      alert(dataContent);
-    }
-  }
-}
 
 function setUpLibraryButtons() {
   let watchedLibraryButton = document.getElementById('watched-library-btn');
@@ -135,7 +126,7 @@ function setUpLibraryButtons() {
     qdLibraryButton.classList.remove('selected-button');
   }
 
-  
+
   qdLibraryButton.onclick = async function (ev) {
     await renderLibrary.render('queuedMovies');
     qdLibraryButton.classList.add('selected-button');

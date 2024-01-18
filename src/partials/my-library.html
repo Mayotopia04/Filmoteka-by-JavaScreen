@@ -19,13 +19,22 @@
     border-bottom: 4px solid #ff6b08;
   }
 
-  a:hover {
+  /* a {
+    cursor: pointer;
+  } */
+
+  .link-font:hover {
     color: #ffffff;
     text-decoration: none;
     border-bottom: 4px solid #ff6b08;
     text-decoration-style: solid;
     direction: ltr;
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .link-font {
+    text-decoration: none;
+    color: white;
   }
 
   .selected-button {
@@ -138,20 +147,18 @@
     gap: 90px;
   }
 
-  .link-font {
-    text-decoration: none;
-    color: white;
-  }
 </style>
 
 <header class="my-library-header">
   <div class="header-wrap">
     <div class="logo">
+      <a href="./index.html">
       <svg class="socmed-icon" width="24" height="24">
         <use href="./images/icons.svg#logo-icon"></use>
-      </svg>
+      </svg></a>
       <h1 class="logo-font">Filmoteka</h1>
     </div>
+    
     <div>
       <ul class="list">
         <li><a href="./index.html" class="link-font">HOME</a></li>

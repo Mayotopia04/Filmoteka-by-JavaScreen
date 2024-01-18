@@ -8,11 +8,12 @@ let searchButton = document.getElementById('search-button');
 
 //  capture the search texts
 //  call search API with search texts
-//  render the  results in the page 
+//  render the  results in the page
 searchButton.onclick = async function (e) {
     const searchField = document.getElementById('search-input');
     await renderSearch.render({text: searchField.value});
     setupMovieCardOnClick();
+    document.getElementById('pagination').innerHTML = '';
 }
 
 function setupMovieCardOnClick() {
@@ -25,18 +26,18 @@ function setupMovieCardOnClick() {
         // console.log(response);
         //  pass the response of the movie details api to RenderMovieDetails
         renderMovieDetails.render(response.data);
-  
+
         let addToWatchedBtn = document.getElementById('add-to-watched-btn');
         let addToQueueBtn = document.getElementById('add-to-q-btn');
         addToWatchedBtn.onclick = function (e) {
-          
-          // get item if it exists in localStorage 
+
+          // get item if it exists in localStorage
           let watchedMoviesText = localStorage.getItem("watchedMovies");
           let watchedMovies = [];
           if (watchedMoviesText) {
             watchedMovies = JSON.parse(watchedMoviesText);
           }
-  
+
           let movieInfo = {
             id: response.data.id,
             poster_path: response.data.poster_path,
@@ -44,19 +45,19 @@ function setupMovieCardOnClick() {
             vote_average: response.data.vote_average,
             genre_ids: response.data.genres.map(g => g.id),
             release_date: response.data.release_date
-  
+
           }
-  
+
           watchedMovies.push(movieInfo);
-  
+
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           console.log(watchedMovies);
         }
-  
-  
-        
+
+
+
         addToQueueBtn.onclick = function (e) {
-          
+
           let queuedMoviesText = localStorage.getItem("queuedMovies");
           let queuedMovies = [];
           if (queuedMoviesText) {
@@ -69,11 +70,11 @@ function setupMovieCardOnClick() {
             vote_average: response.data.vote_average,
             genre_ids: response.data.genres.map(g => g.id),
             release_date: response.data.release_date
-  
+
           }
-  
+
           queuedMovies.push(movieInfo);
-  
+
           localStorage.setItem('queuedMovies', JSON.stringify(queuedMovies));
         }
     };
@@ -81,4 +82,4 @@ function setupMovieCardOnClick() {
 }
 
 
-    
+
