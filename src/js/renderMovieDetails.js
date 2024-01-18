@@ -1,5 +1,5 @@
 import templateProcessor from './templateProcessor';
-import { GENRES } from './config';
+import { genre_names } from './renderMovieCard';
 
 class RenderMovieDetails {
   render(options) {
@@ -46,6 +46,8 @@ class RenderMovieDetails {
     
 </div>
 `;
+
+options.genre_names = genre_names;
 
 
 // options.genre_names = `${GENRES}`;

@@ -1,6 +1,8 @@
 import templateProcessor from './templateProcessor';
 import { GENRES } from './config';
 
+export let genre_names; 
+
 class RenderMovieCard {
   render(options) {
     let genres = options.genre_ids.map(g => GENRES[g]);
@@ -18,6 +20,8 @@ class RenderMovieCard {
 `;
 
     options.genre_names = genreNames;
+
+    genre_names = options.genre_names;
 
     const releaseDate = options.release_date;
     const releaseYear = releaseDate.split('-')[0];

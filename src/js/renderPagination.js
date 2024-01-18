@@ -52,6 +52,7 @@ class RenderPagination {
         await renderHome.render({page: currentPage});
       }
 
+
       // paginationButton.addEventListener('click', function (e) {
       //     alert('Page me');
       // });
@@ -64,6 +65,7 @@ class RenderPagination {
       pageArrowButton.onclick = async function (e) {
         const dataIndex = e.currentTarget.getAttribute('data-index');
         currentPage = currentPage + parseInt(dataIndex);
+        e.currentTarget.classList.add('pagination--current')
         if (currentPage <= 0 ) {
           currentPage = 1;
         }
