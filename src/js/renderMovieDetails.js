@@ -3,7 +3,6 @@ import { genre_names } from './renderMovieCard';
 
 class RenderMovieDetails {
   render(options) {
-    // options.genre_names = options.genre_ids.map(g => GENRES[g]).join(', ');
     console.log('start movie details rendering');
     const templateHtml = `<div class="modal-content modal-shape p-3">
     <div class="text-end"><button
@@ -46,7 +45,7 @@ class RenderMovieDetails {
     
 </div>
 `;
-
+// to display genre property in modal card 
 options.genre_names = genre_names;
 
 

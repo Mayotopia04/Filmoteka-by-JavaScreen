@@ -1,7 +1,6 @@
-
 import MovieDbApi from './api';
-
 import renderMovieCard from './renderMovieCard';
+import renderPagination from './renderPagination';
 
 class RenderSearch {
 
@@ -13,6 +12,7 @@ class RenderSearch {
         //  movies.data.results
         //  Iterate through each movie results
         let count = 0;
+        console.log(movies);
         movies.data.results.forEach((movie) => {
             // const movieHtml=  RenderMovieCard.render(movie);
             
@@ -20,6 +20,7 @@ class RenderSearch {
             count++;
         });
         document.getElementById('content').innerHTML = searchMatchHTML;
+        renderPagination.render(options.page);
     }
 }
 

@@ -1,6 +1,6 @@
 import templateProcessor from './templateProcessor';
 import { GENRES } from './config';
-
+// to render genre name value in modal of movie-card-with-buttons
 export let genre_names; 
 
 class RenderMovieCard {
@@ -20,7 +20,6 @@ class RenderMovieCard {
 `;
 
     options.genre_names = genreNames;
-
     genre_names = options.genre_names;
 
     const releaseDate = options.release_date;

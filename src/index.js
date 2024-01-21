@@ -16,7 +16,6 @@ window.onload = async function () {
 
 }
 
-
 //  Render all components
 //  Header, Content, Footer
 async function renderComponents() {
@@ -37,10 +36,6 @@ async function renderComponents() {
   }
 
 }
-
-
-
-
 
 //  Setup event listeners
 //  Create a function for each type
@@ -120,11 +115,11 @@ function setupMovieCardOnClick() {
 function setUpLibraryButtons() {
   let watchedLibraryButton = document.getElementById('watched-library-btn');
   let qdLibraryButton = document.getElementById('qd-library-btn');
-  watchedLibraryButton.onclick = async function (ev) {
+  watchedLibraryButton.addEventListener( "click", async function (ev) {
     await renderLibrary.render('watchedMovies');
     watchedLibraryButton.classList.add('selected-button');
     qdLibraryButton.classList.remove('selected-button');
-  }
+  })
 
 
   qdLibraryButton.onclick = async function (ev) {
@@ -133,3 +128,24 @@ function setUpLibraryButtons() {
     watchedLibraryButton.classList.remove('selected-button');
   }
 }
+
+// Sir Jeremy footer modal
+const studentModal = document.querySelector("#jeremy-modal");
+studentModal.addEventListener('click', jeremyModal);
+
+const studentDev = document.querySelector("#dev");
+studentDev.addEventListener('click', onDev);
+
+function onDev(event) {
+  if (event.target.nodeName !== "IMG") {
+    return; 
+  }
+
+  document.getElementById("img01").src = event.target.src;
+  document.getElementById("modal01").style.display = "block";
+}
+
+function jeremyModal() {
+  document.querySelector("#dev").classList.toggle("is-hidden");
+}
+

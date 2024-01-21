@@ -1,6 +1,7 @@
 import MovieDbApi from './api';
 import renderSearch from './renderSearch';
 import renderMovieDetails from './renderMovieDetails';
+import renderPagination from './renderPagination';
 
 let searchButton = document.getElementById('search-button');
 // async call for API
@@ -13,7 +14,8 @@ searchButton.onclick = async function (e) {
     const searchField = document.getElementById('search-input');
     await renderSearch.render({text: searchField.value});
     setupMovieCardOnClick();
-    document.getElementById('pagination').innerHTML = '';
+    // document.getElementById('pagination').innerHTML = '';
+    
 }
 
 function setupMovieCardOnClick() {
@@ -46,14 +48,13 @@ function setupMovieCardOnClick() {
             genre_ids: response.data.genres.map(g => g.id),
             release_date: response.data.release_date
 
-          }
+          };
 
           watchedMovies.push(movieInfo);
 
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           console.log(watchedMovies);
         }
-
 
 
         addToQueueBtn.onclick = function (e) {
@@ -71,14 +72,14 @@ function setupMovieCardOnClick() {
             genre_ids: response.data.genres.map(g => g.id),
             release_date: response.data.release_date
 
-          }
+          };
 
           queuedMovies.push(movieInfo);
 
           localStorage.setItem('queuedMovies', JSON.stringify(queuedMovies));
-        }
+        };
     };
-    }
+  }
 }
 
 

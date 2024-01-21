@@ -25,7 +25,6 @@ class RenderHome {
 
   }
 
-
   setupMovieCardOnClick() {
     const movieCardLinks = document.getElementsByClassName('movie-card');
     for (const movieCardLink of movieCardLinks) {
@@ -63,7 +62,6 @@ class RenderHome {
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           console.log(watchedMovies);
         };
-
 
         addToQueueBtn.onclick = function(e) {
 
