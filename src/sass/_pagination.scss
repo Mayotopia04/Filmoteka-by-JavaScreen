@@ -8,8 +8,9 @@
 
 }
 
-.page-button a.current {
+.page-button.current {
   background-color: #FF6B08;
+  color: #fff;
 }
 
 .pagination-button{
@@ -24,13 +25,13 @@
   border-color: #fff;
 }
 
-.pagination-button:not(.active){
-  background-color: #fff;
-  border-radius: 5px;
-  color: #000;
-  font-weight: bold;
-  border-radius: 5px;
-}
+// .pagination-button:not(.active){
+//   background-color: #fff;
+//   border-radius: 5px;
+//   color: #000;
+//   font-weight: bold;
+//   border-radius: 5px;
+// }
 .pagination-button.pagination--current,
 .pagination-button:focus,
 .pagination-button:hover,

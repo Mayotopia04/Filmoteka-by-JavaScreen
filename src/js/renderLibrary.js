@@ -1,7 +1,8 @@
 import MovieDbApi from './api';
-
+import { DETAILS_OPTION } from './config';
 import renderMovieCard from './renderMovieCard';
 import renderMovieDetails from './renderMovieDetails';
+import { setupMovieCardOnClick } from '..';
 
 class RenderLibrary {
 
@@ -26,10 +27,10 @@ class RenderLibrary {
       count++;
     });
     document.getElementById('content').innerHTML = moviesHtml;
-    this.setupMovieCardOnClick();
+    setupMovieCardOnClick();
   }
 
-  setupMovieCardOnClick() {
+  /* setupMovieCardOnClick() {
     const movieCardLinks = document.getElementsByClassName('movie-card');
     for (const movieCardLink of movieCardLinks) {
       movieCardLink.onclick = async function(ev) {
@@ -61,7 +62,16 @@ class RenderLibrary {
 
           };
 
-          watchedMovies.push(movieInfo);
+          // watchedMovies.push(movieInfo);
+          watchedMovies = watchedMovies.map(watched=>{
+            if(watched.id === movieInfo.id){
+              watched = {
+                ...watched,
+                movieInfo,
+              }
+            }
+            return watched;
+          })
 
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           console.log(watchedMovies);
@@ -75,6 +85,7 @@ class RenderLibrary {
           if (queuedMoviesText) {
             queuedMovies = JSON.parse(queuedMoviesText);
           }
+          
           let movieInfo = {
             id: response.data.id,
             poster_path: response.data.poster_path,
@@ -84,14 +95,23 @@ class RenderLibrary {
             release_date: response.data.release_date,
 
           };
-
-          queuedMovies.push(movieInfo);
+          queuedMovies = queuedMovies.map(queue=>{
+            if(queue.id === movieInfo.id){
+              queue = {
+                ...queue,
+                movieInfo,
+              }
+            }
+            return queue;
+          })
+          
+          console.log(queuedMovies);
 
           localStorage.setItem('queuedMovies', JSON.stringify(queuedMovies));
         };
       };
     }
-  }
+  } */
 }
 
 export default new RenderLibrary();

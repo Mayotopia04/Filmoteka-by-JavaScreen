@@ -1,9 +1,10 @@
 import templateProcessor from './templateProcessor';
 import renderHome from './renderHome';
+import renderSearch from './renderSearch';
 class RenderPagination {
 
-  render(currentPage) {
-    let leftArrow = '<button class="page-arrow pagination-button last-button me-2" data-index="-1">&lt;</button>';
+  render(currentPage, total_pages) {
+    /* let leftArrow = '<button class="page-arrow pagination-button last-button me-2" data-index="-1">&lt;</button>';
     let dotsHtml = '<span class="dots px-3">...</span>';
     let pageButtonTemplate = '<button class="page-button pagination-button" data-index="{{pageNumber}}">{{pageNumber}}</button>';
     let rightArrow = '<button class="page-arrow pagination-button arrow-right ms-2" data-index="1">&gt;</button>';
@@ -44,12 +45,20 @@ class RenderPagination {
     document.getElementById('pagination').innerHTML = leftArrow + pagesHtml + rightArrow;
 
     //  get all buttons with class pagination-button
+    console.log(currentPage);
     let paginationButtons = document.getElementsByClassName('page-button');
     for(let paginationButton of paginationButtons) {
       paginationButton.onclick = async function (e) {
         const dataIndex = e.currentTarget.getAttribute('data-index');
         currentPage = parseInt(dataIndex);
-        await renderHome.render({page: currentPage});
+        // switch(currentContent){
+        //   case 'home':
+            await renderHome.render({page: currentPage});
+        //     break;
+        //   case 'search':
+        //     await renderSearch.render({page: currentPage});
+        // }
+        
       }
 
 
@@ -69,9 +78,50 @@ class RenderPagination {
         if (currentPage <= 0 ) {
           currentPage = 1;
         }
-        await renderHome.render({page: currentPage});
+        // switch(currentContent){
+        //   case 'home':
+            await renderHome.render({page: currentPage});
+        //     break;
+        //   case 'search':
+        //     await renderSearch.render({page: currentPage});
+        // }
       }
+    } */
+    let storedList = '';
+  let numPage = 1;
+  let countdown = 0;
+  switch (parseInt(currentPage)) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      break;
+    default:
+      numPage = parseInt(currentPage) - 2;
+      storedList += `
+                <button type="button" class="page-button pagination-button" data-index="1">1</button>
+                <span>...</span>`;
+      break;
+  }
+  for (let i = numPage; i <= total_pages; i++) {
+    let activePage = '';
+    if (i === parseInt(currentPage)) {
+      activePage += ' current';
     }
+    storedList += `
+            <button type="button" class="page-button pagination-button${activePage}" data-index="${i}">${i}</button>
+            `;
+    countdown += 1;
+    if (countdown === 5) {
+      storedList += `
+                <span>...</span>
+                <button type="button" class="page-button pagination-button" data-index="${total_pages}">${total_pages}</button>
+                `;
+      break;
+    }
+  }
+
+  return storedList;
 
   }
 }
