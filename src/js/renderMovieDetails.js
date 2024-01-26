@@ -1,9 +1,8 @@
 import templateProcessor from './templateProcessor';
-import { genre_names } from './renderMovieCard';
 
 class RenderMovieDetails {
   render(options) {
-    console.log('start movie details rendering');
+    // console.log('start movie details rendering');
     const templateHtml = `<div class="modal-content modal-shape p-3">
     <div class="text-end"><button
         type="button"
@@ -14,7 +13,7 @@ class RenderMovieDetails {
 
       <div class="row details-wrap">
       <div class="col-md-5">
-            <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="img-fluid poster-border poster-width"/>
+            <img src="{{poster_path}}" class="img-fluid poster-border poster-width"/>
       </div>
       <div class= "col">
       <h2 class="movie-details-title">{{original_title}}</h2>
@@ -46,7 +45,14 @@ class RenderMovieDetails {
 </div>
 `;
 // to display genre property in modal card 
-options.genre_names = genre_names;
+// console.log(options);
+
+// creating new poster_path if true or false
+options.poster_path = (options.poster_path) ? `https://image.tmdb.org/t/p/w342${options.poster_path}` : 'https://cdn.vectorstock.com/i/1000x1000/88/26/no-image-available-icon-flat-vector-25898826.webp';
+
+options.genre_names = options.genres.map(({name})=>{
+  return name;
+}).join(', ');
 
 
 // options.genre_names = `${GENRES}`;

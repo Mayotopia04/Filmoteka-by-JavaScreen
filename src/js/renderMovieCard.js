@@ -13,7 +13,7 @@ class RenderMovieCard {
   data-bs-toggle="modal"
   data-bs-target="#movie-details-modal"
 >
-  <img src="https://image.tmdb.org/t/p/w342{{poster_path}}" class="poster-border img-width"/>
+  <img src="{{poster_path}}" class="poster-border img-width"/>
   <h3 class="movie-card-title">{{original_title}}</h3>
   <p><span class="movie-card-details">{{genre_names}} | {{release_year}} </span> <span class="vote-average"> {{vote_average}}</span></p>
 </div>
@@ -21,7 +21,7 @@ class RenderMovieCard {
 
     options.genre_names = genreNames;
     genre_names = options.genre_names;
-
+    options.poster_path = (options.poster_path) ? `https://image.tmdb.org/t/p/w342${options.poster_path}` : 'https://cdn.vectorstock.com/i/1000x1000/88/26/no-image-available-icon-flat-vector-25898826.webp';
     const releaseDate = options.release_date;
     const releaseYear = releaseDate.split('-')[0];
 

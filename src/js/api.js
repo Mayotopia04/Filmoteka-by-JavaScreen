@@ -21,11 +21,11 @@ class MovieDbApi {
         return await axios.get(url, options);
     }
 
-    async searchMovies(searchValue) {
+    async searchMovies(searchValue,page) {
         
         const searchValueUri = encodeURIComponent(searchValue);
         const options = { headers: { accept: "application/json" } };
-        const url = `https://api.themoviedb.org/3/search/movie?query=${searchValueUri}&include_adult=false&language=en-US&page=1&api_key=${API_KEY}`;
+        const url = `https://api.themoviedb.org/3/search/movie?query=${searchValueUri}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`;
         
         return await axios.get(url, options);
     }

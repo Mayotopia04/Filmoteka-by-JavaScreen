@@ -10,6 +10,11 @@ export const CONTENT_KEYS = {
   search: "search",
 };
 
+export const DETAILS_OPTION = {
+  default: 'ADD',
+  remove: 'REMOVE',
+}
+
 export const GENRES = {
   28: "Action",
   12: "Adventure",
